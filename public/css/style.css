@@ -1,0 +1,133 @@
+:root {
+  --color-brand: #635bff;
+  --color-text: #182230;
+  --color-muted: #667085;
+  --color-surface: #ffffff;
+  --color-background: #f4f7fb;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --radius: 1rem;
+}
+
+[data-theme="dark"] {
+  --color-text: #f7f9fc;
+  --color-muted: #b6c0cf;
+  --color-surface: #202938;
+  --color-background: #111827;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Wymuszenie pełnej wysokości dla poprawnego układu aplikacji */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Blokada globalnego scrolla na rzecz sekcji wewnętrznych */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+/* ==========================================================================
+   SEKCJA 1: MENU U GÓRY
+   ========================================================================== */
+.top-menu {
+    height: 60px; /* Stała wysokość wpisana bezpośrednio */
+    background-color: var(--color-text); /* Ciemne tło z Twojej palety */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0; /* Gwarancja, że menu nigdy nie zniknie ani się nie zmniejszy */
+}
+
+.top-menu .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-brand); /* Kolor fioletowy dla brandu Thyme */
+}
+
+.top-menu ul {
+    display: flex;
+    list-style: none;
+    gap: var(--space-3);
+}
+
+.top-menu ul a:hover {
+    color: var(--color-brand);
+}
+
+.page-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--color-surface);
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    padding: var(--space-3);
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    margin-bottom: var(--space-2);
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.sidebar ul a {
+    display: block;
+    padding: var(--space-1) 0;
+    font-weight: 500;
+}
+
+.sidebar ul a:hover {
+    color: var(--color-brand);
+}
+
+.main-content {
+    flex: 1;
+    padding: var(--space-3);
+    overflow-y: auto;
+    background-color: var(--color-background);
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+}
+
+.main-content p {
+    line-height: 1.6;
+    color: var(--color-text);
+}
